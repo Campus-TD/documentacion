@@ -45,3 +45,8 @@ Para utilizar Laravel 8 y su conexión a la base de datos, es necesario instalar
 ```
 dnf install php-mysqlnd -y
 ```
+
+
+...
+Construcción
+...
