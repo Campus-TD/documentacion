@@ -1,9 +1,10 @@
 
-# Instalación Laravel en CentOS 8
+# Instalación Pila LAMP en CentOS 8
 
 ### Configuración Inicial del VPS
 
 Primeramente debemos asegurarnos que nuestro VPS se encuentre actualizado utilizando el comando:
+
 ```
 sudo dnf update -y
 ```
@@ -13,12 +14,14 @@ Una vez actualizado el VPS, procedemos a realizar la instalación de el servidor
 ### Instalación APACHE
 
 Utilizamos el comando:
+
 ```
 dnf install httpd -y
 ```
 
 Una vez realizado este paso, debemos iniciar el servicio de Apache utilizando el comando:
 ```
+systemctl enable httpd
 systemctl start httpd
 ```
 Con esto, accediendo a la dirección de nuestro servidor en el navegador, observaremos una página de prueba que corrobora que Apache se ha instalado correctamente.
@@ -37,7 +40,7 @@ Una vez instalados estos dos paquetes, procederemos a instalar la versión 7.3 d
 ```
 dnf module install php:remi-7.3 -y
 ```
-Por último, como recomendación instalar los siguientes modulos de php para evitar posibles problemas.
+Por último, como requerimento instalaremos los siguientes modulos de php para evitar problemas de compatibilidad e instalación.
 ```
 dnf install php-cli php-json php-xml php-bcmath php-gd zip unzip php-zip -y
 ```
@@ -45,8 +48,4 @@ Para utilizar Laravel 8 y su conexión a la base de datos, es necesario instalar
 ```
 dnf install php-mysqlnd -y
 ```
-
-
-...
-Construcción
-...
+Continuar con la instalación de Laravel 8 en CentOS 8.
